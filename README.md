@@ -56,6 +56,8 @@ Le système doit couvrir plusieurs aspects :
    - Notes données par les clients (sur 5).
    - Pas de vérification de séjour.
 
-
+*Diagramme entité/association (MCD) du projet*
 ![Modèle conceptuel](figures/schema_mcd.png)
+
+*Modèle relationnel final avec clés primaires et étrangères*
 ![Modèle relationnel](figures/schema_relationnel.png)
