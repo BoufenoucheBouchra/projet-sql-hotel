@@ -55,3 +55,7 @@ Le système doit couvrir plusieurs aspects :
 8. **Appréciations**
    - Notes données par les clients (sur 5).
    - Pas de vérification de séjour.
+
+
+![Modèle conceptuel](figures/schema_mcd.png)
+![Modèle relationnel](figures/schema_relationnel.png)
