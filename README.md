@@ -66,6 +66,7 @@ Le système doit couvrir plusieurs aspects :
 ## À propos du script SQL
 
 Le script `script.sql` contient toutes les instructions pour créer les tables, définir les relations (clés primaires et étrangères), et insérer des données de test pour simuler la gestion complète d’une franchise hôtelière.
+
 Exemple de requête : Quels sont les partenaires qui ont amené les clients donnant en moyenne les meilleures notes? Classez-les selon, et baissez d'1% la commission du partenaire qui apporte les plus faibles notes.
 ```sql
 -- Requête pour calculer la note moyenne par partenaire
@@ -95,3 +96,8 @@ Résultat :
 | Vacances pour Tous     | 3,5      |
 | XYZ Corp               | 3,5      |
 | Les Amis du Voyage     | 3        |
+
+
+## Remarques
+Ce projet est un travail académique réalisé en première année de Master M1 Bioinformatique et Biologie des Systèmes. 
+Certaines requêtes peuvent être améliorées.
