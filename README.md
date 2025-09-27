@@ -1,5 +1,5 @@
 # projet-sql-hotel
-# Projet SQL – Base de données Hôtels
+# Projet SQL – Base de données Hôtel
 Projet réalisé dans le cadre du Master 1 (travail en groupe de 3 étudiants).  
 Objectif :concevoir et implémenter une base de données relationnelle permettant la gestion complète d'une franchise d’hôtels.
 
