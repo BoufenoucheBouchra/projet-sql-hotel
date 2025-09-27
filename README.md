@@ -1,6 +1,6 @@
 # projet-sql-hotel
 # Projet SQL – Base de données Hôtel
-Projet réalisé dans le cadre du Master 1 (travail en groupe de 3 étudiants).  
+Projet réalisé dans le cadre du Master 1 Bioinformatique et Biologie des Systèmes (travail en groupe de 3 étudiants).  
 Objectif :concevoir et implémenter une base de données relationnelle permettant la gestion complète d'une franchise d’hôtels.
 
 ## Contexte
@@ -61,3 +61,34 @@ Le système doit couvrir plusieurs aspects :
 
 *Modèle relationnel final avec clés primaires et étrangères*
 ![Modèle relationnel](figures/modele_relationnel.png)
+
+
+## À propos du script SQL
+
+Le script `script.sql` contient toutes les instructions pour créer les tables, définir les relations (clés primaires et étrangères), et insérer des données de test pour simuler la gestion complète d’une franchise hôtelière.
+Exemple de requête : Quels sont les partenaires qui ont amené les clients donnant en moyenne les meilleures notes? Classez-les selon, et baissez d'1% la commission du partenaire qui apporte les plus faibles notes.
+SELECT P.nom, AVG(N.note) AS avg_note
+FROM Reserve R
+INNER JOIN Client C ON R.No_Client = C.No_Client
+INNER JOIN Note N ON N.No_Client = C.No_Client
+INNER JOIN Partenaire P ON R.No_Partenaire = P.No_Partenaire
+GROUP BY P.No_Partenaire, P.nom
+ORDER BY avg_note DESC;
+
+UPDATE Partenaire
+SET commission = commission - 0.1
+
+Résultat : 
+NOM                                                  AVG_NOTE
+-------------------------------------------------- ----------
+Acme Inc                                                  4,5
+ABC Travel                                                4,5
+Passion Voyages                                           4,5
+Techno Solutions                                            4
+Club des Randonneurs                                        4
+Globetrek                                                   4
+Voyage Plus                                               3,5
+Vacances pour Tous                                        3,5
+XYZ Corp                                                  3,5
+Les Amis du Voyage                                          3
+WHERE nom = 'Les Amis du Voyage';
