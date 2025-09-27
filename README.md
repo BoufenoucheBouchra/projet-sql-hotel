@@ -60,4 +60,4 @@ Le système doit couvrir plusieurs aspects :
 ![Modèle conceptuel](figures/schema_mcd.png)
 
 *Modèle relationnel final avec clés primaires et étrangères*
-![Modèle relationnel](figures/modéle_relationnel.png)
+![Modèle relationnel](figures/modéle_relationnel .png)
