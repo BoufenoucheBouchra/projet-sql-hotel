@@ -67,6 +67,8 @@ Le système doit couvrir plusieurs aspects :
 
 Le script `script.sql` contient toutes les instructions pour créer les tables, définir les relations (clés primaires et étrangères), et insérer des données de test pour simuler la gestion complète d’une franchise hôtelière.
 Exemple de requête : Quels sont les partenaires qui ont amené les clients donnant en moyenne les meilleures notes? Classez-les selon, et baissez d'1% la commission du partenaire qui apporte les plus faibles notes.
+```sql
+-- Requête pour calculer la note moyenne par partenaire
 SELECT P.nom, AVG(N.note) AS avg_note
 FROM Reserve R
 INNER JOIN Client C ON R.No_Client = C.No_Client
@@ -75,20 +77,21 @@ INNER JOIN Partenaire P ON R.No_Partenaire = P.No_Partenaire
 GROUP BY P.No_Partenaire, P.nom
 ORDER BY avg_note DESC;
 
+-- Mise à jour de la commission du partenaire avec la plus faible note moyenne
 UPDATE Partenaire
-SET commission = commission - 0.1
+SET commission = commission - 0.01
+WHERE nom = 'Les Amis du Voyage';
 
 Résultat : 
-NOM                                                  AVG_NOTE
--------------------------------------------------- ----------
-Acme Inc                                                  4,5
-ABC Travel                                                4,5
-Passion Voyages                                           4,5
-Techno Solutions                                            4
-Club des Randonneurs                                        4
-Globetrek                                                   4
-Voyage Plus                                               3,5
-Vacances pour Tous                                        3,5
-XYZ Corp                                                  3,5
-Les Amis du Voyage                                          3
-WHERE nom = 'Les Amis du Voyage';
+| NOM                    | AVG_NOTE |
+|------------------------|----------|
+| Acme Inc               | 4,5      |
+| ABC Travel             | 4,5      |
+| Passion Voyages        | 4,5      |
+| Techno Solutions       | 4        |
+| Club des Randonneurs   | 4        |
+| Globetrek              | 4        |
+| Voyage Plus            | 3,5      |
+| Vacances pour Tous     | 3,5      |
+| XYZ Corp               | 3,5      |
+| Les Amis du Voyage     | 3        |
